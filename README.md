@@ -4,9 +4,13 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+Access the APp here "https://stanbic-ibtc-portfolio-simulation-app-aqkkztsgkdnzmajyihqmbq.streamlit.app/"
+
 ## Overview
 
 This Streamlit web application simulates potential investment returns for a portfolio consisting of the Stanbic IBTC Money Market Fund and the Stanbic IBTC Nigerian Equity Fund. It allows users to explore different investment scenarios by adjusting parameters such as initial investment, investment horizon, risk level, and market conditions. The app provides visualizations and tabular summaries of the simulated portfolio performance.
+Access the App here :"https://stanbic-ibtc-portfolio-simulation-app-aqkkztsgkdnzmajyihqmbq.streamlit.app/"
+
 
 ## Features
 
@@ -16,6 +20,15 @@ This Streamlit web application simulates potential investment returns for a port
 *   **Data Visualization:** Visualize portfolio value and profit over time using interactive charts.
 *   **Performance Summary:** View a tabular summary of key performance metrics, including monthly, quarterly, and annual returns.
 *   **Minimalist UI:** The is clean and easy to follow for users.
+
+
+![alt text](image.png)
+
+
+![alt text](image-1.png)
+
+
+![alt text](image-2.png)
 
 ## Technologies Used
 
@@ -75,6 +88,9 @@ secondaryBackgroundColor="#F0F8FF"
 backgroundColor="#FFFFFF"
 textColor="#000000"
 font="sans serif"
+
+Access the App here "https://stanbic-ibtc-portfolio-simulation-app-aqkkztsgkdnzmajyihqmbq.streamlit.app/"
+
 Use code with caution.
 Markdown
 Contribution
