@@ -9,40 +9,42 @@ st.markdown(
     <style>
     body {
         font-family: "Century Gothic", sans-serif; /* Century Gothic or fallback */
-        color: #000000; /* Black text overall */
-        background-color: #EAF2FF; /* Light blue background */
+        color: <Change this Text Colour to all aspects of the web pages>;
+        background-color: <Colour code for what you need>; /* Light blue background */
     }
     h1, h2, h3 {
-        color: #004990; /* Dark Blue */
+        color: <Colour Code that you want for the title>; /* Dark Blue */
     }
     /* Sidebar background and text color */
     [data-testid="stSidebar"] {
         background-color: #F0F8FF; /* Light blue sidebar */
-        color: #000000;
+        color: <Make the colour here 
+        change from White or any text that you do not want here>;
     }
 
     /* Sidebar text set to Black */
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, [data-testid="stSidebar"] p, [data-testid="stSidebar"] label {
-        color: #000000;
+        color: <This code is a reference - all code must match,
+    so please change - and let me know how we can improve the style for your website >;
     }
 
     /* Adjust slider color */
     .stSlider>div>div>div>div {
-        background-color: #004990;
+        background-color: <Adjustments to create an even better UI/;
     }
     /* Style radio buttons*/
     .stRadio > label {
-        color: #000000; /* Black */
+        color: <Change>; /* This will be the main colour*/
         font-weight: normal;
     }
 
     /* Bold text - a different colour - make sure it follows all themes*/
     b, strong {
-        color: #007BFF !important; /* A brighter blue */
+        color:  /* A brighter blue - edit this to make it fit your new change */ !important;
     }
     [data-baseweb="select"] > div { /* Change the text for you to follow*/
-        border-color: #004990;
-        color: #000000;
+        border-color: <Please find a great colour for your theme - that we are looking to solve> ;
+        color: <Change the text colour to whatever you desire to change here>;
     }
 
     /* Dataframe styling (Black Text on standard background*/
