@@ -9,41 +9,49 @@ st.markdown(
     <style>
     body {
         font-family: "Century Gothic", sans-serif; /* Century Gothic or fallback */
-        color: #808080; /* Dark gray text for overall readability */
-        background-color: #FFFFFF; /* White Background - clearer*/
+        color: #000000; /* Black text overall */
+        background-color: #FFFFFF; /* White background - less harsh than black */
     }
     h1, h2, h3 {
-        color: #004990; /* Stanbic Blue for headings */
+        font-family: "Century Gothic", sans-serif;
+        color: #004990; /* Stanbic Blue */
     }
+
     .stSlider>div>div>div>div {
         background-color: #004990;
     }
     .stRadio > label {
-        color: #000000; /* make text black */
+        color: #000000;
         font-weight: normal;
+        font-family: "Century Gothic", sans-serif;
     }
-    .css-1adrbqj { /* Target the sidebar */
-        background-color: #F0F8FF; /* light background */
-        color: #000000;  /* sidebar in general is now black*/
-    }
-    [data-testid="stSidebar"] p, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, [data-testid="stSidebar"] p, [data-testid="stSidebar"] label {
-        color: #000000;  /* Black is colour  */
-    }
-    b, strong {
-        color: #007BFF !important;  /* Colour for  Bold text */
-    }
-    [data-baseweb="select"] > div {
-    border-color: #004990;
-        color: #000000; /* And that will provide a new look for the website  */
+    /* Target the sidebar background (almost transparent blue) */
+    [data-testid="stSidebar"] {
+        background-color: rgba(240, 248, 255, 0.8); /* Light Transparent Blue (adjust opacity for desired effect)*/
+        color: #000000;
     }
 
-    /* Style Dataframes  - with the right fonts and codes*/
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, [data-testid="stSidebar"] p, [data-testid="stSidebar"] label {
+        color: #000000;  /* Sidebar text */
+    }
+
+    b, strong {
+        color: #007BFF !important;
+    }
+    [data-baseweb="select"] > div {
+        border-color: #004990;
+        color: #000000;
+    }
+
+    /* DataFrame  and font consistency*/
     .dataframe th {
         background-color: #D0DAE0 !important;
         color: #000000 !important;
+        font-family: "Century Gothic", sans-serif;
     }
     .dataframe td {
-        color: #000000 !important; /* Data colour is all text is back into place for new styling .*/
+        color: #000000 !important;
+        font-family: "Century Gothic", sans-serif;
     }
     </style>
     """,
@@ -81,15 +89,7 @@ def simulate_portfolio(principal, years, money_market_allocation, equity_fund_al
 
     return df
 
-# ---- Title and Introduction ----
-st.title("Portfolio Simulation for Stanbic IBTC Funds")
-st.write("""
-This app simulates potential investment returns for a portfolio consisting of the 
-Stanbic IBTC Money Market Fund and the Stanbic IBTC Nigerian Equity Fund. 
-It's for illustrative purposes only and does not constitute financial advice."https://www.stanbicibtcfundsmanagement.com/invest-now-4ev6leqy/"
-""")
-
-# ---- Home Page ----
+# ---- Helper Functions ----
 def home_page():
     st.title("Portfolio Simulation")
     st.write("""
@@ -246,7 +246,6 @@ def about_me_page():
     # Disclaimer Section at bottom
     st.markdown("---")  # Visual separator
     st.markdown("**Disclaimer:** This app is for educational purposes only and does not provide financial advice. Consult with a qualified professional before making investment decisions.")
-
 
 # ---- Main App Flow ----
 def app():
