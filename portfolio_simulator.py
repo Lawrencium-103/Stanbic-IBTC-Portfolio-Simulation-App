@@ -10,40 +10,38 @@ st.markdown(
     body {
         font-family: "Century Gothic", sans-serif; /* Century Gothic or fallback */
         color: #000000; /* Black text overall */
-        background-color: #FFFFFF; /* White background - less harsh than black */
+        background-color: #FFFFFF; /* White Background - less harsh than black */
     }
     h1, h2, h3 {
-        font-family: "Century Gothic", sans-serif;
-        color: #004990; /* Stanbic Blue */
+        color: #004990; /* Stanbic Blue for headings */
     }
-
     .stSlider>div>div>div>div {
         background-color: #004990;
     }
     .stRadio > label {
-        color: #000000;
+        color: #000000; /* Black text */
         font-weight: normal;
         font-family: "Century Gothic", sans-serif;
     }
-    /* Target the sidebar background (almost transparent blue) */
-    [data-testid="stSidebar"] {
-        background-color: rgba(240, 248, 255, 0.8); /* Light Transparent Blue (adjust opacity for desired effect)*/
-        color: #000000;
+    /* Make the sidebar a shade of blue and text to follow*/
+    .css-1adrbqj { /* Target the sidebar  */
+        background-color: #F0F8FF; /* set a background colour*/
+        color: #000000;   /* black as text is a standard  */
     }
 
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, [data-testid="stSidebar"] p, [data-testid="stSidebar"] label {
-        color: #000000;  /* Sidebar text */
+        color: #000000;  /* Set all the fonts to standard black font- that are related to the sidebar */
     }
 
     b, strong {
-        color: #007BFF !important;
+        color: #007BFF !important;  /* Style font is a bright blue- all over the screen and styling and for easy viewing.   */
     }
     [data-baseweb="select"] > div {
         border-color: #004990;
-        color: #000000;
+        color: #000000; /* Change the text for all you see */
     }
 
-    /* DataFrame  and font consistency*/
+    /* Styling black colour */
     .dataframe th {
         background-color: #D0DAE0 !important;
         color: #000000 !important;
@@ -89,7 +87,15 @@ def simulate_portfolio(principal, years, money_market_allocation, equity_fund_al
 
     return df
 
-# ---- Helper Functions ----
+# ---- Title and Introduction ----
+st.title("Portfolio Simulation for Stanbic IBTC Funds")
+st.write("""
+This app simulates potential investment returns for a portfolio consisting of the 
+Stanbic IBTC Money Market Fund and the Stanbic IBTC Nigerian Equity Fund. 
+It's for illustrative purposes only and not financial advice.
+""")
+
+# ---- Home Page ----
 def home_page():
     st.title("Portfolio Simulation")
     st.write("""
@@ -109,12 +115,17 @@ def home_page():
         if risk_level == "Low":
             money_market_allocation = 1.0  # 100%
             equity_fund_allocation = 0.0  # 0%
+            allocation_text = " (100% Money Market, 0% Equity)"
         elif risk_level == "Medium":
             money_market_allocation = 0.7  # 70%
             equity_fund_allocation = 0.3  # 30%
+            allocation_text = " (70% Money Market, 30% Equity)"
         else:
             money_market_allocation = 0.3  # 30%
             equity_fund_allocation = 0.7  # 70%
+            allocation_text = " (30% Money Market, 70% Equity)"
+
+        st.write(f"**Risk Level:** {risk_level}{allocation_text}") # Displays all the allocation test
 
         st.header("Performance Assumptions (Annual)")
 
