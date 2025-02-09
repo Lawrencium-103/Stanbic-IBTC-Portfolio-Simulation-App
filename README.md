@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Access the APp here "https://stanbic-ibtc-portfolio-simulation-app-aqkkztsgkdnzmajyihqmbq.streamlit.app/"
+Access the APP here "https://stanbic-ibtc-portfolio-simulation-app-aqkkztsgkdnzmajyihqmbq.streamlit.app/"
 
 ## Overview
 
