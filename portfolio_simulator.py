@@ -3,54 +3,78 @@ import pandas as pd
 import numpy as np
 import altair as alt
 
-# ---- Global Styling ----
+# ---- Improved Global Styling ----
 st.markdown(
     """
     <style>
     body {
-        font-family: "Century Gothic", sans-serif; /* Century Gothic or fallback */
-        color: #000000; /* Black text overall */
-        background-color: #FFFFFF; /* White Background - less harsh than black */
-    }
-    h1, h2, h3 {
-        color: #004990; /* Stanbic Blue for headings */
-    }
-    .stSlider>div>div>div>div {
-        background-color: #004990;
-    }
-    .stRadio > label {
-        color: #000000; /* Black text */
-        font-weight: normal;
         font-family: "Century Gothic", sans-serif;
+        color: #333333;  /* Dark gray/black to be less intrusive than pure black */
+        background-color: #F5F5F5; /*  off-white background */
     }
-    /* Make the sidebar a shade of blue and text to follow*/
-    .css-1adrbqj { /* Target the sidebar  */
-        background-color: #F0F8FF; /* set a background colour*/
-        color: #000000;   /* black as text is a standard  */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Century Gothic", sans-serif;
+        color: #0056b3; /* A navy blue, not too dark - great look for styling */
     }
 
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background-color: #E6F0FF; /* Very light blue */
+        color: #222222; /*  black as it can follow the trends.  */
+    }
+    /* Target Sidebar text and selectbox */
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, [data-testid="stSidebar"] p, [data-testid="stSidebar"] label {
-        color: #000000;  /* Set all the fonts to standard black font- that are related to the sidebar */
+        color: #444444; /* Dark grey in sidebar */
+        font-size: 14px;
     }
 
     b, strong {
-        color: #007BFF !important;  /* Style font is a bright blue- all over the screen and styling and for easy viewing.   */
+        color: #2e86ab !important;  /* A muted cyan */
     }
     [data-baseweb="select"] > div {
-        border-color: #004990;
-        color: #000000; /* Change the text for all you see */
+        border-color: #999999;  /* Medium gray*/
+        color: #333333;      /*  change colour  */
     }
 
-    /* Styling black colour */
+    /* Dataframe styling with better and clearer code */
     .dataframe th {
         background-color: #D0DAE0 !important;
         color: #000000 !important;
         font-family: "Century Gothic", sans-serif;
+        font-weight: bold;  /* Make bold for headings for readability */
+        text-align: left;  /* Align to left for visual appeal*/
     }
+
     .dataframe td {
-        color: #000000 !important;
+        color: #333333 !important;
         font-family: "Century Gothic", sans-serif;
     }
+
+   /* Streamlit widget styling (number input, sliders) for better UX*/
+    div.stNumberInput > label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    div.stSlider > label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    div.stSelectbox > label {
+        font-weight: bold;
+        margin-bottom: 5px; /* Add space below label*/
+    }
+
+    .css-qrbaxs { /* Increased label size- easier to find*/
+        font-size: 16px;
+    }
+
+    /* Increased label - better look for any new code  */
+    .css-1aumxhk { /* better look for the code*/
+        font-size: 16px;
+    }
+
     </style>
     """,
     unsafe_allow_html=True,
@@ -93,13 +117,14 @@ st.write("""
 This app simulates potential investment returns for a portfolio consisting of the 
 Stanbic IBTC Money Market Fund and the Stanbic IBTC Nigerian Equity Fund. 
 It's for illustrative purposes only and not financial advice.
+
 """)
 
 # ---- Home Page ----
 def home_page():
     st.title("Portfolio Simulation")
     st.write("""
-    Explore potential investment returns. Higher Equity Allocation increases potential profits, but also significantly increases risk of losses.
+    Explore potential investment returns. Higher Equity Allocation increases potential profits, but also significantly increases the risk of losses.
     """)
 
     # ---- User Inputs ----
@@ -125,7 +150,7 @@ def home_page():
             equity_fund_allocation = 0.7  # 70%
             allocation_text = " (30% Money Market, 70% Equity)"
 
-        st.write(f"**Risk Level:** {risk_level}{allocation_text}") # Displays all the allocation test
+        st.markdown(f"**Risk Level:** {risk_level}{allocation_text}")
 
         st.header("Performance Assumptions (Annual)")
 
@@ -166,7 +191,7 @@ def home_page():
     st.subheader("Key Parameters")
     st.write(f"**Initial Principal:** {principal:,.2f} Naira")
     st.write(f"**Investment Horizon:** {years} Years")
-    st.write(f"**Risk Level:** {risk_level}")
+    st.markdown(f"**Risk Level:** {risk_level}")
     st.write(f"**Money Market Allocation:** {money_market_allocation*100:.0f}%")
     st.write(f"**Equity Fund Allocation:** {equity_fund_allocation*100:.0f}%")
     st.write(f"**Money Market Return:** {mm_return*100:.2f}%")
@@ -257,6 +282,7 @@ def about_me_page():
     # Disclaimer Section at bottom
     st.markdown("---")  # Visual separator
     st.markdown("**Disclaimer:** This app is for educational purposes only and does not provide financial advice. Consult with a qualified professional before making investment decisions.")
+
 
 # ---- Main App Flow ----
 def app():
