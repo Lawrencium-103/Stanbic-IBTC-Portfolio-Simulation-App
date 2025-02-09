@@ -9,51 +9,41 @@ st.markdown(
     <style>
     body {
         font-family: "Century Gothic", sans-serif; /* Century Gothic or fallback */
-        color: <Change this Text Colour to all aspects of the web pages>;
-        background-color: <Colour code for what you need>; /* Light blue background */
+        color: #808080; /* Dark gray text for overall readability */
+        background-color: #FFFFFF; /* White Background - clearer*/
     }
     h1, h2, h3 {
-        color: <Colour Code that you want for the title>; /* Dark Blue */
+        color: #004990; /* Stanbic Blue for headings */
     }
-    /* Sidebar background and text color */
-    [data-testid="stSidebar"] {
-        background-color: #F0F8FF; /* Light blue sidebar */
-        color: <Make the colour here 
-        change from White or any text that you do not want here>;
-    }
-
-    /* Sidebar text set to Black */
-    [data-testid="stSidebar"] p, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, [data-testid="stSidebar"] p, [data-testid="stSidebar"] label {
-        color: <This code is a reference - all code must match,
-    so please change - and let me know how we can improve the style for your website >;
-    }
-
-    /* Adjust slider color */
     .stSlider>div>div>div>div {
-        background-color: <Adjustments to create an even better UI/;
+        background-color: #004990;
     }
-    /* Style radio buttons*/
     .stRadio > label {
-        color: <Change>; /* This will be the main colour*/
+        color: #000000; /* make text black */
         font-weight: normal;
     }
-
-    /* Bold text - a different colour - make sure it follows all themes*/
+    .css-1adrbqj { /* Target the sidebar */
+        background-color: #F0F8FF; /* light background */
+        color: #000000;  /* sidebar in general is now black*/
+    }
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3, [data-testid="stSidebar"] h4, [data-testid="stSidebar"] p, [data-testid="stSidebar"] label {
+        color: #000000;  /* Black is colour  */
+    }
     b, strong {
-        color:  /* A brighter blue - edit this to make it fit your new change */ !important;
+        color: #007BFF !important;  /* Colour for  Bold text */
     }
-    [data-baseweb="select"] > div { /* Change the text for you to follow*/
-        border-color: <Please find a great colour for your theme - that we are looking to solve> ;
-        color: <Change the text colour to whatever you desire to change here>;
+    [data-baseweb="select"] > div {
+    border-color: #004990;
+        color: #000000; /* And that will provide a new look for the website  */
     }
 
-    /* Dataframe styling (Black Text on standard background*/
+    /* Style Dataframes  - with the right fonts and codes*/
     .dataframe th {
         background-color: #D0DAE0 !important;
         color: #000000 !important;
     }
     .dataframe td {
-        color: #000000 !important;
+        color: #000000 !important; /* Data colour is all text is back into place for new styling .*/
     }
     </style>
     """,
@@ -96,7 +86,7 @@ st.title("Portfolio Simulation for Stanbic IBTC Funds")
 st.write("""
 This app simulates potential investment returns for a portfolio consisting of the 
 Stanbic IBTC Money Market Fund and the Stanbic IBTC Nigerian Equity Fund. 
-It's for illustrative purposes only and not financial advice."https://www.stanbicibtcfundsmanagement.com/invest-now-4ev6leqy/"
+It's for illustrative purposes only and does not constitute financial advice."https://www.stanbicibtcfundsmanagement.com/invest-now-4ev6leqy/"
 """)
 
 # ---- Home Page ----
